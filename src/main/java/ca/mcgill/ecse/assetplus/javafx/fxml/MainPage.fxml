@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="730.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.mcgill.ecse.assetplus.javafx.fxml.controllers.MainPage">
+   <children>
+      <TabPane fx:id="tabPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="564.0" prefWidth="730.0" style="-fx-background-color: #4D316E;" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+        <tabs>
+          <Tab style="-fx-background-color: #ffffff;" text="Home">
+               <content>
+                  <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label alignment="CENTER" layoutY="170.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="58.0" prefWidth="730.0" text="ASSET+" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font name="Dubai Light" size="80.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="BOTTOM_RIGHT" layoutX="9.0" layoutY="370.0" prefHeight="105.0" prefWidth="712.0" text="By Team 11" textFill="WHITE" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="9.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="370.0">
+                           <font>
+                              <Font name="Dubai Light" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutX="-9.0" layoutY="245.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="58.0" prefWidth="730.0" text="Your Home Away from Home" textFill="WHITE" AnchorPane.bottomAnchor="139.0" AnchorPane.leftAnchor="-9.0" AnchorPane.rightAnchor="9.0" AnchorPane.topAnchor="245.0">
+                           <font>
+                              <Font name="Dubai Light" size="22.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </content>
+          </Tab>
+          <Tab style="-fx-background-color: #ffffff;" text="View Tickets">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="230.0" prefWidth="851.0">
+                     <children>
+                        <fx:include maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" source="pages/ViewTicketsPage.fxml" AnchorPane.bottomAnchor="-55.5" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab style="-fx-background-color: #ffffff;" text="View Users">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="230.0" prefWidth="851.0">
+                     <children>
+                        <fx:include maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" source="pages/ViewUserPage.fxml" AnchorPane.bottomAnchor="-55.5" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab style="-fx-background-color: #ffffff;" text="View Assets">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="230.0" prefWidth="851.0">
+                     <children>
+                        <fx:include maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" source="pages/ViewAssetsPage.fxml" AnchorPane.bottomAnchor="-55.5" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>          
+        </tabs>
+      </TabPane>
+   </children>
+</VBox>

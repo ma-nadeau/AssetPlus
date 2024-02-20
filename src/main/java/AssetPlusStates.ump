@@ -1,0 +1,138 @@
+class MaintenanceTicket {
+    TicketStatus {
+        Open {
+            assignStaff(String email, PriorityLevel level, TimeEstimate estimate, boolean approval)/ {
+
+               doAssign(email, level, estimate, approval);
+
+               } -> Assigned;
+
+            beginWork() /{rejectBegin("open");} -> Open;
+            
+          	approve() / {rejectApprove("open");}  -> Open;
+
+          	disapprove(String ticketID, String date, String reason) / {rejectDisapprove("open");} -> Open;
+
+          	completeWork() / {rejectComplete("open");} -> Open;
+          	
+        }
+        Assigned {
+            beginWork() -> InProgress;
+
+          	assignStaff(String email, PriorityLevel level, TimeEstimate estimate, boolean approval) / {rejectAssign("assigned");} -> Assigned;
+
+          	completeWork() / {rejectComplete("assigned");} -> Assigned;
+
+          	approve() / {rejectApprove("assigned");}  -> Assigned;
+
+          	disapprove(String ticketID, String date, String reason) / {rejectDisapprove("assigned");} -> Assigned;
+
+        }
+        InProgress {
+            completeWork() [this.hasFixApprover()] -> Resolved;
+            
+            completeWork() [!this.hasFixApprover()] -> Closed;
+          
+            beginWork() /{rejectBegin("in progress");} -> InProgress;
+
+          	assignStaff( String email, PriorityLevel level, TimeEstimate estimate, boolean approval) / {rejectAssign("in progress");} -> InProgress;
+            
+            approve() / {rejectApprove("in progress");}  -> InProgress;
+
+            disapprove(String ticketID, String date, String reason) / {rejectDisapprove("in progress");} -> InProgress;
+        
+        }
+        Resolved{
+            approve() / {doApprove(String.valueOf(this.getId()));}  -> Closed;
+
+            disapprove(String ticketID, String date, String reason) / {doDisapprove(ticketID, date, reason);} -> InProgress;
+          
+            completeWork() / {rejectComplete("resolved");} -> Resolved;
+
+          	beginWork() / {rejectBegin("resolved");} -> Resolved;
+
+          	assignStaff(String email, PriorityLevel level, TimeEstimate estimate, boolean approval) / {rejectAssign("resolved");} -> Resolved;
+           
+        } 
+        Closed{
+            completeWork() / {rejectComplete("closed");} -> Closed;
+
+            assignStaff(String email, PriorityLevel level, TimeEstimate estimate, boolean approval) / {
+
+               rejectAssign("closed");
+               } -> Closed;
+
+            approve() / {rejectApprove("closed");}  -> Closed;
+
+            disapprove(String ticketID, String date, String reason) / {rejectDisapprove("closed");} -> Closed;
+
+            beginWork() / {rejectBegin("closed");} -> Closed;
+
+          }
+    }
+
+    //Jatin Patel & Anastasiia Nemyrovska
+    private void doAssign(String email, PriorityLevel level, TimeEstimate estimate, boolean approval){
+      MaintenanceTicket ticket = this;
+        
+      ticket.setTicketFixer((HotelStaff) User.getWithEmail(email));
+      ticket.setPriority(level);
+      ticket.setTimeToResolve(estimate);
+      if(approval){
+         ticket.setFixApprover(this.getAssetPlus().getManager());
+      }
+    }
+
+    //Marc-Antoine Nadeau & Behrad Rezaie
+  	private void doApprove(String id){
+    }
+
+    //Marc-Antoine Nadeau & Behrad Rezaie
+    private void doDisapprove(String id, String date, String description){
+      
+      MaintenanceTicket ticket = MaintenanceTicket.getWithId(Integer.parseInt(id));
+      ticket.addTicketNote(Date.valueOf(date), description, ticket.getAssetPlus().getManager());
+    }
+    
+    //Behrad Rezaie
+    private void doBeginWork(){
+    }
+
+
+    //All Reject methods take a String status indicating ticket status prior to rejection
+    //Behrad Rezaie
+    private String rejectBegin(String status){
+      if(status.contains("progress")){
+        throw new RuntimeException("The maintenance ticket is already in progress.");
+      }
+      throw new RuntimeException("Cannot start a maintenance ticket which is "+status+".");
+    }
+    //Behrad Rezaie
+    private String rejectComplete(String status){
+      if(status.contains("closed") || status.contains("resolved")){
+        throw new RuntimeException("The maintenance ticket is already "+status+".");
+      }
+      throw new RuntimeException("Cannot complete a maintenance ticket which is "+status+".");
+    }
+    //Behrad Rezaie
+    private String rejectAssign(String status){
+      if (status.contains("assigned")){
+        throw new RuntimeException("The maintenance ticket is already assigned.");
+     }
+      throw new RuntimeException("Cannot assign a maintenance ticket which is "+status+".");
+    }
+
+    
+    //Marc-Antoine Nadeau & Behrad Rezaie
+    private String rejectApprove(String status){
+      if (status.contains("closed")){
+        throw new RuntimeException("The maintenance ticket is already closed.");
+      }
+      throw new RuntimeException("Cannot approve a maintenance ticket which is "+status+".");
+    }
+
+    //Marc-Antoine Nadeau & Behrad Rezaie
+    private String rejectDisapprove(String status){
+      throw new RuntimeException("Cannot disapprove a maintenance ticket which is "+status+".");
+    }
+}

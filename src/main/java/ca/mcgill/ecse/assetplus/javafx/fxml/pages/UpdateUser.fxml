@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="730.0" style="-fx-background-color: #4D316E;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.mcgill.ecse.assetplus.javafx.fxml.controllers.UpdateUser">
+  <columnConstraints>
+      <ColumnConstraints />
+    <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="135.0" />
+    <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="143.0" />
+      <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="320.0" />
+      <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="132.0" />
+      <ColumnConstraints />
+      <ColumnConstraints />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints fillHeight="false" maxHeight="129.0" minHeight="10.0" prefHeight="129.0" vgrow="ALWAYS" />
+      <RowConstraints maxHeight="99.0" minHeight="10.0" prefHeight="70.0" vgrow="ALWAYS" />
+    <RowConstraints maxHeight="124.0" minHeight="10.0" prefHeight="105.0" vgrow="ALWAYS" />
+    <RowConstraints maxHeight="97.46182250976562" minHeight="10.0" prefHeight="97.46182250976562" vgrow="ALWAYS" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+  </rowConstraints>
+   <children>
+      <Label maxWidth="1.7976931348623157E308" prefHeight="129.0" prefWidth="822.0" style="-fx-background-color: #FFFFFF;" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" />
+      <ImageView fitHeight="126.0" fitWidth="286.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">
+      <image>
+            <Image url="@../images/Logo.png" />
+         </image>
+      </ImageView>
+      <Label alignment="BOTTOM_LEFT" contentDisplay="TOP" prefHeight="129.0" prefWidth="730.0" text="Hotel Management" textFill="#e8e8e8" GridPane.columnIndex="1" GridPane.columnSpan="6" GridPane.rowIndex="1">
+         <font>
+            <Font name="Dubai Light" size="30.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <GridPane.margin>
+            <Insets bottom="15.0" left="50.0" />
+         </GridPane.margin>
+      </Label>
+      <Label text="Name" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets top="20.0" />
+         </GridPane.margin>
+         <font>
+            <Font name="Gill Sans" size="17.0" />
+         </font></Label>
+      <TextField fx:id="userNameTextField" prefHeight="43.0" prefWidth="330.0" promptText="Insert Name" GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.valignment="TOP">
+         <font>
+            <Font name="Gill Sans" size="17.0" />
+         </font>
+         <GridPane.margin>
+            <Insets top="8.0" />
+         </GridPane.margin></TextField>
+      <Label text="Account Name" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+         <GridPane.margin>
+            <Insets bottom="25.0" />
+         </GridPane.margin>
+         <font>
+            <Font name="Gill Sans" size="17.0" />
+         </font></Label>
+      <TextField fx:id="userEmailTextField" prefHeight="43.0" prefWidth="330.0" promptText="Insert Email" GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+         <GridPane.margin>
+            <Insets bottom="15.0" />
+         </GridPane.margin>
+         <font>
+            <Font name="Gill Sans" size="17.0" />
+         </font></TextField>
+      <Label text="Phone Number" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets top="15.0" />
+         </GridPane.margin>
+         <font>
+            <Font name="Gill Sans" size="17.0" />
+         </font></Label>
+      <TextField fx:id="userPhoneNumberTextField" prefHeight="43.0" prefWidth="330.0" promptText="Insert Phone Number" GridPane.columnIndex="3" GridPane.rowIndex="3" GridPane.valignment="TOP">
+         <font>
+            <Font name="Gill Sans" size="17.0" />
+         </font></TextField>
+      <Label text="Password" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
+         <GridPane.margin>
+            <Insets bottom="10.0" />
+         </GridPane.margin>
+         <font>
+            <Font name="Gill Sans" size="17.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="userPasswordTextField" prefHeight="43.0" prefWidth="330.0" promptText="Insert Password" GridPane.columnIndex="3" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
+         <GridPane.margin>
+            <Insets />
+         </GridPane.margin>
+         <font>
+            <Font name="Gill Sans" size="17.0" />
+         </font>
+      </PasswordField>
+      <Button fx:id="cancelButton" alignment="CENTER" mnemonicParsing="false" onAction="#goBackClicked" prefHeight="46.0" prefWidth="100.0" text="Back" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">
+         <GridPane.margin>
+            <Insets top="10.0" />
+         </GridPane.margin>
+         <font>
+            <Font name="Gill Sans" size="17.0" />
+         </font>
+      </Button>
+      <MenuButton alignment="CENTER" mnemonicParsing="false" prefHeight="46.0" prefWidth="100.0" text="Update" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">
+         <items>
+          <MenuItem mnemonicParsing="false" onAction="#updateManagerClicked" text="Update Manager" />
+          <MenuItem mnemonicParsing="false" onAction="#updateEmployeeOrGuestClicked" text="Update Employee or Guest" />
+        </items>
+         <GridPane.margin>
+            <Insets top="10.0" />
+         </GridPane.margin>
+         <font>
+            <Font name="Gill Sans" size="17.0" />
+         </font>
+      </MenuButton>
+   </children>
+</GridPane>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="730.0" style="-fx-background-color: #4D316E;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ca.mcgill.ecse.assetplus.javafx.fxml.controllers.UpdateAsset">
+  <columnConstraints>
+      <ColumnConstraints />
+    <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="135.0" />
+    <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="143.0" />
+      <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="320.0" />
+      <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="132.0" />
+      <ColumnConstraints />
+      <ColumnConstraints />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints fillHeight="false" maxHeight="129.0" minHeight="10.0" prefHeight="129.0" vgrow="ALWAYS" />
+      <RowConstraints maxHeight="104.0" minHeight="10.0" prefHeight="104.0" vgrow="ALWAYS" />
+    <RowConstraints maxHeight="124.0" minHeight="10.0" prefHeight="119.0" vgrow="ALWAYS" />
+    <RowConstraints maxHeight="97.46182250976562" minHeight="10.0" prefHeight="97.46182250976562" vgrow="ALWAYS" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS" />
+  </rowConstraints>
+   <children>
+      <Label maxWidth="1.7976931348623157E308" prefHeight="129.0" prefWidth="822.0" style="-fx-background-color: #FFFFFF;" GridPane.columnIndex="1" GridPane.columnSpan="4" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" />
+      <ImageView fitHeight="126.0" fitWidth="286.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">
+      <image>
+            <Image url="@../images/Logo.png" />
+         </image>
+      </ImageView>
+      <Label alignment="BOTTOM_LEFT" contentDisplay="TOP" prefHeight="129.0" prefWidth="730.0" text="Asset Management" textFill="#e8e8e8" GridPane.columnIndex="1" GridPane.columnSpan="6" GridPane.rowIndex="1">
+         <font>
+            <Font name="Dubai Light" size="30.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <GridPane.margin>
+            <Insets bottom="50.0" left="50.0" />
+         </GridPane.margin>
+      </Label>
+      <Label text="Asset Number" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+         <GridPane.margin>
+            <Insets bottom="10.0" />
+         </GridPane.margin>
+         <font>
+            <Font name="Gill Sans" size="17.0" />
+         </font></Label>
+      <TextField fx:id="assetNumberTextField" prefHeight="43.0" prefWidth="330.0" promptText="Insert Original Asset Number" GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.valignment="BOTTOM">
+         <font>
+            <Font name="Gill Sans" size="17.0" />
+         </font>
+         <GridPane.margin>
+            <Insets top="8.0" />
+         </GridPane.margin></TextField>
+      <Label text=" Floor Number" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+         <GridPane.margin>
+            <Insets bottom="25.0" />
+         </GridPane.margin>
+         <font>
+            <Font name="Gill Sans" size="17.0" />
+         </font></Label>
+      <TextField fx:id="floorNumberTextField" prefHeight="43.0" prefWidth="330.0" promptText="Insert Updated Asset Floor Number" GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+         <GridPane.margin>
+            <Insets bottom="15.0" />
+         </GridPane.margin>
+         <font>
+            <Font name="Gill Sans" size="17.0" />
+         </font></TextField>
+      <Label text="Room Number" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets top="15.0" />
+         </GridPane.margin>
+         <font>
+            <Font name="Gill Sans" size="17.0" />
+         </font></Label>
+      <TextField fx:id="roomNumberTextField" prefHeight="43.0" prefWidth="330.0" promptText="Insert Updated Asset Room Number" GridPane.columnIndex="3" GridPane.rowIndex="3" GridPane.valignment="TOP">
+         <font>
+            <Font name="Gill Sans" size="17.0" />
+         </font></TextField>
+      <Label text="Asset Type" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="3" GridPane.valignment="BOTTOM">
+         <GridPane.margin>
+            <Insets bottom="10.0" />
+         </GridPane.margin>
+         <font>
+            <Font name="Gill Sans" size="17.0" />
+         </font>
+      </Label>
+      <Button fx:id="goBack" alignment="CENTER" mnemonicParsing="false" onAction="#goBack" prefHeight="46.0" prefWidth="100.0" text="Back" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets top="10.0" />
+         </GridPane.margin>
+         <font>
+            <Font name="Gill Sans" size="17.0" />
+         </font>
+      </Button>
+      <DatePicker fx:id="purchaseDateDatePicker" prefHeight="43.0" prefWidth="445.0" promptText="YYYY-MM-DD" GridPane.columnIndex="3" GridPane.rowIndex="2" GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets bottom="5.0" top="10.0" />
+         </GridPane.margin>
+      </DatePicker>
+      <Label text="Purchase Date" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.rowIndex="2" GridPane.valignment="TOP">
+         <font>
+            <Font name="Gill Sans" size="17.0" />
+         </font>
+         <GridPane.margin>
+            <Insets top="20.0" />
+         </GridPane.margin>
+      </Label>
+      <Button fx:id="updateAsset" alignment="CENTER" mnemonicParsing="false" onAction="#updateAsset" prefHeight="46.0" prefWidth="100.0" text="Update" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="TOP">
+         <font>
+            <Font name="Gill Sans" size="17.0" />
+         </font>
+         <GridPane.margin>
+            <Insets top="10.0" />
+         </GridPane.margin>
+      </Button>
+      <ComboBox fx:id="assetTypeTextField" prefHeight="43.0" prefWidth="445.0" GridPane.columnIndex="3" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
+   </children>
+</GridPane>
